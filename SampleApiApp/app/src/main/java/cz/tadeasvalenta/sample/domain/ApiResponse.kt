@@ -16,6 +16,7 @@
 
 package cz.tadeasvalenta.sample.domain
 
+import cz.tadeasvalenta.sample.constants.NetworkConstants
 import retrofit2.Response
 
 internal const val UNKNOWN_CODE = -1
@@ -25,7 +26,7 @@ sealed class ApiResponse<T> {
         fun <T> create(response: Response<T>): ApiResponse<T> {
             return if (response.isSuccessful) {
                 val body = response.body()
-                if (body == null || response.code() == 204) { // 204 = no content code
+                if (body == null || response.code() == NetworkConstants.StatusCode.NO_CONTENT) {
                     ApiEmptyResponse()
                 } else {
                     ApiSuccessResponse(body)

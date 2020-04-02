@@ -8,7 +8,6 @@ class OwnerDataItem (
     val login: String,
     val id: Int,
  // val nodeId: String,
-    val fullName: String,
     @Json(name = "avatar_url") val avatarUrl: String,
     val url: String,
     val type: String
