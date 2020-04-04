@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         rvSearchResults.layoutManager = LinearLayoutManager(this)
         rvSearchResults.adapter = RecyclerViewAdapter(searchResults)
+        rvSearchResults.setHasFixedSize(true)
         btnSearch.setOnClickListener {
             pbCircualProgress.visibility = View.VISIBLE
             val response = iApi.searchRepositories(etSearchInput.text.toString())
