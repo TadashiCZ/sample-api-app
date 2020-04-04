@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SampleApiApp</string>
+    <string name="search_prompt">Search</string>
 </resources>
