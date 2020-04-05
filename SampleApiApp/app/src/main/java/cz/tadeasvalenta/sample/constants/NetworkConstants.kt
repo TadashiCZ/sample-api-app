@@ -9,4 +9,6 @@ object NetworkConstants {
     object StatusCode {
         const val NO_CONTENT = 204
     }
+
+    const val REPOSITORY_BUNDLE = "REPOSITORY_BUNDLE"
 }

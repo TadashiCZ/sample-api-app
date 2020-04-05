@@ -3,15 +3,20 @@ package cz.tadeasvalenta.sample.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import cz.tadeasvalenta.sample.SearchResultViewHolder
 import cz.tadeasvalenta.sample.domain.responses.RepoDataItem
 
 
 class RecyclerViewAdapter(private val resultsList: List<RepoDataItem>) :
     RecyclerView.Adapter<SearchResultViewHolder>() {
+
+    val list = resultsList
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchResultViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return SearchResultViewHolder(inflater, parent)
+        return SearchResultViewHolder(
+            inflater,
+            parent
+        )
     }
 
     override fun getItemCount(): Int = resultsList.size
@@ -20,4 +25,6 @@ class RecyclerViewAdapter(private val resultsList: List<RepoDataItem>) :
         val result = resultsList[position]
         holder.bind(result)
     }
+
+
 }
