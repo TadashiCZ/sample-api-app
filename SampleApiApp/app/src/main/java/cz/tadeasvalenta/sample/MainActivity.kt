@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import cz.tadeasvalenta.sample.domain.ApiResponse
 import cz.tadeasvalenta.sample.domain.ApiSuccessResponse
@@ -27,19 +28,20 @@ class MainActivity : AppCompatActivity() {
         rvSearchResults.layoutManager = LinearLayoutManager(this)
         rvSearchResults.adapter = RecyclerViewAdapter(searchResults)
         rvSearchResults.setHasFixedSize(true)
+        rvSearchResults.addItemDecoration(DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL))
         btnSearch.setOnClickListener {
-            pbCircualProgress.visibility = View.VISIBLE
+            //TODO: add loading indicator
             val response = iApi.searchRepositories(etSearchInput.text.toString())
             response.observe(this, Observer { data ->
                 putDataIntoRecycler(data)
             })
-            pbCircualProgress.visibility = View.INVISIBLE
         }
     }
 
 
     private fun putDataIntoRecycler(data: ApiResponse<RepoSearchResponse>?) {
         if (data is ApiSuccessResponse<RepoSearchResponse>) {
+            searchResults.clear()
             val repos = data.body.items
             for (repo in repos){
                 searchResults.add(repo)

@@ -10,12 +10,12 @@ class SearchResultViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     RecyclerView.ViewHolder(inflater.inflate(R.layout.search_result_item, parent, false)) {
 
     var tvName: TextView = itemView.findViewById(R.id.tvName)
-    var tvCreatedAt: TextView = itemView.findViewById(R.id.tvCreatedAt)
+    var tvDescription: TextView = itemView.findViewById(R.id.tvDescription)
     var tvStars: TextView = itemView.findViewById(R.id.tvStars)
 
     fun bind(repo: RepoDataItem){
         tvName.text = repo.name
-        tvCreatedAt.text = repo.createdAt
+        tvDescription.text = repo.description ?: "Missing description"
         tvStars.text = repo.stargazersCount.toString()
     }
 
