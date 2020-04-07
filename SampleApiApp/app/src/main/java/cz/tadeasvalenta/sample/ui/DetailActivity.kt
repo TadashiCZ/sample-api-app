@@ -18,7 +18,9 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val repo: RepoDataItem? = intent.extras?.getParcelable(NetworkConstants.REPOSITORY_BUNDLE)
         if (repo != null) {
-            Picasso.with(applicationContext).load(repo.owner.avatarUrl).into(ivProfilePhoto)
+            Picasso.with(applicationContext).load(repo.owner.avatarUrl).fit().centerCrop()
+                .placeholder(R.drawable.profile_placeholder).error(R.drawable.profile_placeholder)
+                .into(ivProfilePhoto)
             tvRepoName.text = repo.name
             tvAuthorLogin.text = getString(R.string.author_login, repo.owner.login)
             tvCreatedAt.text = getString(R.string.created_at, repo.createdAt)
