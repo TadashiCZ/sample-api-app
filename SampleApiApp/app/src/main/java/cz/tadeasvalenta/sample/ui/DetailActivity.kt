@@ -3,6 +3,7 @@ package cz.tadeasvalenta.sample.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.squareup.picasso.Picasso
 import cz.tadeasvalenta.sample.R
 import cz.tadeasvalenta.sample.constants.NetworkConstants
 import cz.tadeasvalenta.sample.domain.responses.RepoDataItem
@@ -17,6 +18,7 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val repo: RepoDataItem? = intent.extras?.getParcelable(NetworkConstants.REPOSITORY_BUNDLE)
         if (repo != null) {
+            Picasso.with(applicationContext).load(repo.owner.avatarUrl).into(ivProfilePhoto)
             tvRepoName.text = repo.name
             tvAuthorLogin.text = getString(R.string.author_login, repo.owner.login)
             tvCreatedAt.text = getString(R.string.created_at, repo.createdAt)
