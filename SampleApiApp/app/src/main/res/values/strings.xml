@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">SampleApiApp</string>
     <string name="search_prompt">Search</string>
+    <string name="owner_pofile_image">Owner pofile image</string>
+    <string name="author_login">Author login: %s</string>
+    <string name="created_at">Created at: %s</string>
+    <string name="fork">Forked: %s</string>
+    <string name="stars">Stars: %s</string>
+    <string name="score">Score: %s</string>
+    <string name="description">Description: %s</string>
 </resources>

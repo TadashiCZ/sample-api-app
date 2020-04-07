@@ -1,9 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".ui.DetailActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/ivProfilePhoto"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:contentDescription="@string/owner_pofile_image"
+        android:paddingTop="32dp" />
+
+    <TextView
+        android:id="@+id/tvRepoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:text="Star Lorem Ipsum" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvAuthorLogin"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textAlignment="textStart"
+            tools:text="Author login: alexdobin" />
+
+        <TextView
+            android:id="@+id/tvCreatedAt"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textAlignment="textStart"
+            tools:text="Created at: 2016-03-17T12:17:56Z" />
+
+        <TextView
+            android:id="@+id/tvFork"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textAlignment="textStart"
+            tools:text="Fork: No" />
+
+        <TextView
+            android:id="@+id/tvStars"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textAlignment="textStart"
+            tools:text="Stars: 861" />
+
+        <TextView
+            android:id="@+id/tvScore"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textAlignment="textStart"
+            tools:text="Score: 8.43" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:textAlignment="textStart"
+            tools:text="Description: RNA-seq aligner. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur interdum tellus sit amet diam viverra, commodo vestibulum lorem porttitor…" />
+
+    </LinearLayout>
+
+</LinearLayout>
